@@ -1,11 +1,14 @@
 // setting up express server
 const express           = require("express");
 const app               = express();
+const db                = require('./config/mongoose');
 
 
 // defining port number
 const port              = process.env.port || 8000;
 
+// added a parser
+app.use(express.urlencoded({extended: true}));
 
 // Acquiring Routes
 app.use('/', require('./routes'))
