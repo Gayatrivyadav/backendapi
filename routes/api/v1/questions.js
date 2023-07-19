@@ -1,6 +1,7 @@
 const express               = require('express');
 const router                = express.Router();
-const questionsApi   = require('../../../controller/questionsController');
+const questionsApi    = require('../../../controller/questionsController');
+const optionController      = require('../../../controller/optionsController');
 
 // Create a Question
 router.post('/create', questionsApi.create);
@@ -12,6 +13,6 @@ router.delete('/:id/delete', questionsApi.delete);
 router.get('/:id', questionsApi.getQuestion);
 
 // Create a options for specific question
-router.post('/:id/options/create',questionsApi.addOptions);
+// router.post('/:id/options/create',optionController.addOptions);
 
 module.exports = router;
