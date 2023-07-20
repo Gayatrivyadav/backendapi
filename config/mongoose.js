@@ -2,7 +2,10 @@ const mongoose      = require('mongoose');
 
 
 // connect to databases
-mongoose.connect('mongodb://127.0.0.1/Polling_System_Api');
+// mongoose.connect('mongodb://127.0.0.1/Polling_System_Api');
+mongoose.connect(
+    "mongodb+srv://yashsonkar0102:1zekkejuxTTPdKji@pollingsystemapi.trtgujn.mongodb.net/"
+);
 
 // acquire the connection
 const db = mongoose.connection;

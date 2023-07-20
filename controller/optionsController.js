@@ -14,7 +14,7 @@ module.exports.addOptions = (req, res) => {
         if (option) {
             console.log("Successfully Created Option!!");
 
-            console.log("option._id: ", option._id);
+            // console.log("option._id: ", option._id);
 
             //Set the link_to_vote field for the option and save it
             option.link_to_vote = `http://localhost:8000/api/v1/options/${option._id}/add_vote`;
