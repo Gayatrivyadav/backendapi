@@ -52,10 +52,15 @@ module.exports.delete = async (req, res) => {
 module.exports.getQuestion = async (req, res) => {
     try {
     // Using the 'Question' model to fetch all questions
-    const questions = await Question.find();
+    const questionId = req.params.id;
+    const questions = await Question.findById(questionId).populate('options');
 
-    // Handle successful fetch here, for example, send the questions in the response
-    res.status(200).json(questions);
+        if (questions) {
+            res.status(200).json(questions);
+        } else {
+            res.status(404).json({ message: "Question Not Found!"});
+        }
+
     } catch (error) {
     // Handle error here, for example, send an error response
     res

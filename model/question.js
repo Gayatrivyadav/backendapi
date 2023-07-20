@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Option   = require("./option");
 
 const questionSchema = new mongoose.Schema ({
     title : {
