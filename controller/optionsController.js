@@ -17,7 +17,8 @@ module.exports.addOptions = (req, res) => {
             // console.log("option._id: ", option._id);
 
             //Set the link_to_vote field for the option and save it
-            option.link_to_vote = `http://localhost:8000/api/v1/options/${option._id}/add_vote`;
+            // option.link_to_vote = `http://localhost:8000/api/v1/options/${option._id}/add_vote`;
+            option.link_to_vote = `https://polling-system-api-gh3q.onrender.com/api/v1/options/${option._id}/add_vote`;
             option.save();
 
             Questions.findById(questionId)
